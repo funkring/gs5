@@ -175,6 +175,12 @@ function SipCall.fork(self, destinations, arg )
       local gateway = common.gateway.Gateway:new{ log = self.log, database = self.database}:find_by_id(destination.id);
 
       if gateway and gateway.outbound then
+        if destination.caller_id_number then
+          table.insert(origination_variables, "origination_caller_id_number='" .. destination.caller_id_number .. "'");
+        end
+        if destination.caller_id_name then
+          table.insert(origination_variables, "origination_caller_id_name='" .. destination.caller_id_name .. "'");
+        end
         gateway:origination_variables('invite', origination_variables, gateway.settings, destination, self.caller);
 
         if destination.channel_variables then
