@@ -56,6 +56,7 @@ class ConfigSnomController < ApplicationController
   }
 
   MAC_ADDRESS_TO_MODEL = {
+    '0004134A' => 'Snom 300',
     '00041325' => 'Snom 300',
     '00041328' => 'Snom 300',
     '0004132D' => 'Snom 300',
