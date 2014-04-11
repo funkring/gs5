@@ -174,7 +174,16 @@
 
   %functionKeys
     - @softkeys.each_with_index do |softkey, index|
-      - if softkey[:type]
+      - if @phone.phone_model.name == 'Snom 300' && index > 1 && index <= 5
+        - if index == 2
+          %fkey{:idx => index, :context => (softkey[:context] ? softkey[:context].to_s : 'active'), :label => '', :perm => 'RW'}= @dkeys[:redial]
+        - elsif index == 3
+          %fkey{:idx => index, :context => (softkey[:context] ? softkey[:context].to_s : 'active'), :label => '', :perm => 'RW'}= @dkeys[:directory]
+        - elsif index == 4
+          %fkey{:idx => index, :context => (softkey[:context] ? softkey[:context].to_s : 'active'), :label => '', :perm => 'RW'}= "keyevent F_TRANSFER"            
+        - elsif index == 5
+          %fkey{:idx => index, :context => (softkey[:context] ? softkey[:context].to_s : 'active'), :label => '', :perm => 'RW'}= "keyevent F_R"
+      - elsif softkey[:type]
         %fkey{:idx => index, :context => (softkey[:context] ? softkey[:context].to_s : 'active'), :label => softkey[:label], :perm => 'RW'}= "#{softkey[:type]} #{softkey[:value]}"
       - elsif softkey[:general_type]
         %fkey{:idx => index, :context => (softkey[:context] ? softkey[:context].to_s : 'active'), :label => softkey[:label], :perm => 'RW'}
