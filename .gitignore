@@ -11,6 +11,7 @@ tmp/
 /ERD.pdf
 /ERD.png
 /bin
+/config/private_pub.yml
 
 # Numerous always-ignore extensions
 *.diff
