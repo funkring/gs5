@@ -49,6 +49,7 @@ dwsync.xml
 /db/*.db
 /db/*.db-journal
 
+log
 log/*.log
 tmp/**/*
 /.project
