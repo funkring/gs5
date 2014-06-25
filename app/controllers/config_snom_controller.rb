@@ -65,6 +65,7 @@ class ConfigSnomController < ApplicationController
     '00041350' => 'Snom 300',
     '0004133B' => 'Snom 300',
     '00041337' => 'Snom 300',
+    '00041336' => 'Snom 300',
     '00041324' => 'Snom 320',
     '00041327' => 'Snom 320',
     '0004132C' => 'Snom 320',
